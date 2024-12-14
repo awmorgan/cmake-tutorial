@@ -12,6 +12,13 @@ target_include_directories(mathlib PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/mathlib
 )
 
-add_executable(HelloCMake main.c greet.c)
-target_link_libraries(HelloCMake PRIVATE mathlib)
+# Enable testing
+enable_testing()
+
+# Add test executable
+add_executable(test_mathlib tests/test_mathlib.c)
+target_link_libraries(test_mathlib PRIVATE mathlib)
+
+# Add test to CTest
+add_test(NAME MathLibTest COMMAND test_mathlib)
 

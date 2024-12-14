@@ -3,4 +3,4 @@ cmake_minimum_required(VERSION 3.10)
 
 project(HelloCMake C)
 
-add_executable(HelloCMake main.c)
+add_executable(HelloCMake main.c greet.c)
